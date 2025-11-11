@@ -1,6 +1,7 @@
 "use client"
 
 import { ExternalLink } from "lucide-react"
+import Image from "next/image"
 import { useState } from "react"
 
 interface Project {
@@ -13,7 +14,7 @@ interface Project {
 }
 
 export default function ProjectCard({ project, index }: { project: Project; index: number }) {
-  const [isHovered, setIsHovered] = useState(false)
+  const [isHovered, setIsHovered] = useState(false) // eslint-disable-line @typescript-eslint/no-unused-vars
 
   return (
     <div
@@ -27,12 +28,14 @@ export default function ProjectCard({ project, index }: { project: Project; inde
         {/* Image Container */}
         <div
           className="relative h-64 md:h-72 overflow-hidden bg-muted"
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
+          onMouseEnter={() => setIsHovered(true)} // eslint-disable-line @typescript-eslint/no-unused-vars
+          onMouseLeave={() => setIsHovered(false)} // eslint-disable-line @typescript-eslint/no-unused-vars
         >
-          <img
+          <Image
             src={project.image || "/placeholder.svg"}
             alt={project.title}
+            width={350}
+            height={350}
             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-between p-4">
