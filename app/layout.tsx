@@ -10,25 +10,25 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] })
 const _poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600", "700"] })
 
 export const metadata: Metadata = {
-  title: "Mi Portafolio | Desarrollador Web",
+  title: "Alonso Morante",
   description: "Portafolio profesional de desarrollador web. Proyectos, experiencia y contacto.",
   generator: "v0.app",
   icons: {
     icon: [
       {
-        url: "/icon-light-32x32.png",
+        url: "/laptop.png",
         media: "(prefers-color-scheme: light)",
       },
       {
-        url: "/icon-dark-32x32.png",
+        url: "/laptop.png",
         media: "(prefers-color-scheme: dark)",
       },
       {
-        url: "/icon.svg",
+        url: "/laptop.png",
         type: "image/svg+xml",
       },
     ],
-    apple: "/apple-icon.png",
+    apple: "/laptop.png",
   },
   viewport: {
     width: "device-width",

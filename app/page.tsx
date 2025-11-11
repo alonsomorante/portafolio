@@ -51,52 +51,55 @@ export default function Home() {
       <Hero />
 
       {/* About Section */}
-      <section id="about" className="py-16 md:py-24 px-4 md:px-8 bg-card/50">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-balance animate-fade-in-up">Sobre Mí</h2>
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="space-y-6 animate-slide-in-right">
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                Soy desarrollador web apasionado por crear experiencias digitales excepcionales. Con más de 2 años de
-                experiencia, me especializo en construcción de aplicaciones web escalables utilizando tecnologías
-                modernas.
-              </p>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                Me encanta resolver problemas complejos y trabajar con equipos para llevar ideas del concepto al
-                lanzamiento. Cuando no estoy codificando, disfruto contribuyendo a proyectos de código abierto y
-                compartir conocimiento con la comunidad.
-              </p>
-              <div className="flex gap-3 pt-2">
-                <CVModal />
-                <a href="https://github.com/alonsomorante" target="_blank" rel="noopener noreferrer">
-                  <Button variant="outline" size="sm" className="gap-2 bg-transparent">
-                    <GitHub className="w-5 h-5" />
-                    GitHub
-                  </Button>
-                </a>
-                <a href="https://www.linkedin.com/in/alonso-morante-a376a7195/" target="_blank" rel="noopener noreferrer">
-                  <Button variant="outline" size="sm" className="gap-2 bg-transparent">
-                    <Linkedin className="w-5 h-5" />
-                    LinkedIn
-                  </Button>
-                </a>
-              </div>
-            </div>
-            <div className="flex justify-center animate-scale-in">
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl blur-xl opacity-60"></div>
-                <Image
-                  src="/wira-alonso.jpg"
-                  alt="Foto de perfil"
-                  width={320}
-                  height={320}
-                  className="relative md:w-80 md:h-80 rounded-2xl object-cover shadow-lg hover:shadow-xl transition-shadow"
-                />
-              </div>
-            </div>
+     <section id="about" className="py-16 md:py-8 px-4 md:px-8 bg-card/50">
+  <div className="max-w-7xl mx-auto">
+    <h2 className="text-4xl md:text-5xl font-bold mb-8 text-balance animate-fade-in-up">Sobre Mí</h2>
+    <div className="grid md:grid-cols-2 gap-8 items-center">
+      <div className="space-y-6 animate-slide-in-right">
+        <p className="text-muted-foreground text-lg leading-relaxed">
+          Soy desarrollador web apasionado por crear experiencias digitales excepcionales. Con más de 2 años de
+          experiencia, me especializo en construcción de aplicaciones web escalables utilizando tecnologías
+          modernas.
+        </p>
+        <p className="text-muted-foreground text-lg leading-relaxed">
+          Me encanta resolver problemas complejos y trabajar con equipos para llevar ideas del concepto al
+          lanzamiento. Cuando no estoy codificando, disfruto contribuyendo a proyectos de código abierto y
+          compartir conocimiento con la comunidad.
+        </p>
+        <div className="flex gap-3 pt-2">
+          <CVModal />
+          <a href="https://github.com/alonsomorante" target="_blank" rel="noopener noreferrer">
+            <Button variant="outline" size="sm" className="gap-2 bg-transparent">
+              <GitHub className="w-5 h-5" />
+              GitHub
+            </Button>
+          </a>
+          <a href="https://www.linkedin.com/in/alonso-morante-a376a7195/" target="_blank" rel="noopener noreferrer">
+            <Button variant="outline" size="sm" className="gap-2 bg-transparent">
+              <Linkedin className="w-5 h-5" />
+              LinkedIn
+            </Button>
+          </a>
+        </div>
+      </div>
+      <div className="flex justify-center animate-scale-in">
+        <div className="relative w-full max-w-md">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl blur-xl opacity-60"></div>
+          <div className="relative w-full aspect-square">
+            <Image
+              src="/wira-alonso.jpg"
+              alt="Foto de perfil"
+              fill
+              className="rounded-2xl object-cover shadow-lg hover:shadow-xl transition-shadow"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              priority
+            />
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
 
       <section id="projects" className="py-16 md:py-24 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">

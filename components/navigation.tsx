@@ -9,7 +9,6 @@ export default function Navigation() {
   const navLinks = [
     { href: "#about", label: "Sobre Mí" },
     { href: "#projects", label: "Proyectos" },
-    { href: "#contact", label: "Contacto" },
   ]
 
   return (
