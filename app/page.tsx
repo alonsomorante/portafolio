@@ -1,103 +1,122 @@
-import Image from "next/image";
+import { Github as GitHub, Linkedin } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import Hero from "@/components/hero"
+import ProjectCard from "@/components/project-card"
+import CVModal from "@/components/cv-modal"
+import Navigation from "@/components/navigation"
+import Image from "next/image"
+
+const projects = [
+  {
+    id: 1,
+    title: "Nutrijama",
+    description: "Aplicación web interactiva diseñada para consultar información nutricional detallada de alimentos de manera rápida y sencilla.",
+    tags: ["React", "Next.js", "Prisma", "Tailwind CSS", "PostgreSQL"],
+    link: "https://nutrijama.vercel.app/groups",
+    image: "/nutrijama-thumbnail.png",
+  },
+  {
+    id: 2,
+    title: "Bichos game",
+    description:
+      "Juego de personajes con poderes diferentes con interacción en un mapa",
+    tags: ["Javascript", "CSS", "HTML", "Canva API"],
+    link: "https://alonsomorante.github.io/",
+    image: "/bichos-game-thumbnail.png",
+  },
+  {
+    id: 3,
+    title: "Movie finder",
+    description: "Aplicación que facilita la búsqueda de películas extrayendo data de una API externa",
+    tags: ["Vite", "Javascript", "CSS", "React"],
+    link: "https://645eb6fd8bb2214aa2851bd2--warm-malabi-74d3ac.netlify.app/",
+    image: "/avenger-thumbnail.png",
+  },
+  {
+    id: 4,
+    title: "Burguerking Clone",
+    description: "Diseño hecho en Figma y concretado en una página web clon del famoso Burguerking",
+    tags: ["Figma", "CSS", "HTML"],
+    link: "https://burguer-tech-prov.onrender.com/",
+    image: "/burguer-king-clone-thumbnail.png",
+  },
+]
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen bg-background text-foreground">
+      <Navigation />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Hero primero */}
+      <Hero />
+
+      {/* About Section */}
+      <section id="about" className="py-16 md:py-24 px-4 md:px-8 bg-card/50">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-balance animate-fade-in-up">Sobre Mí</h2>
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="space-y-6 animate-slide-in-right">
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                Soy desarrollador web apasionado por crear experiencias digitales excepcionales. Con más de 2 años de
+                experiencia, me especializo en construcción de aplicaciones web escalables utilizando tecnologías
+                modernas.
+              </p>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                Me encanta resolver problemas complejos y trabajar con equipos para llevar ideas del concepto al
+                lanzamiento. Cuando no estoy codificando, disfruto contribuyendo a proyectos de código abierto y
+                compartir conocimiento con la comunidad.
+              </p>
+              <div className="flex gap-3 pt-2">
+                <CVModal />
+                <a href="https://github.com/alonsomorante" target="_blank" rel="noopener noreferrer">
+                  <Button variant="outline" size="sm" className="gap-2 bg-transparent">
+                    <GitHub className="w-5 h-5" />
+                    GitHub
+                  </Button>
+                </a>
+                <a href="https://www.linkedin.com/in/alonso-morante-a376a7195/" target="_blank" rel="noopener noreferrer">
+                  <Button variant="outline" size="sm" className="gap-2 bg-transparent">
+                    <Linkedin className="w-5 h-5" />
+                    LinkedIn
+                  </Button>
+                </a>
+              </div>
+            </div>
+            <div className="flex justify-center animate-scale-in">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl blur-xl opacity-60"></div>
+                <Image
+                  src="/wira-alonso.jpg"
+                  alt="Foto de perfil"
+                  width={320}
+                  height={320}
+                  className="relative md:w-80 md:h-80 rounded-2xl object-cover shadow-lg hover:shadow-xl transition-shadow"
+                />
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      <section id="projects" className="py-16 md:py-24 px-4 md:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-12 space-y-3 animate-fade-in-up">
+            <h2 className="text-4xl md:text-5xl font-bold text-balance">Mis Proyectos</h2>
+            <p className="text-muted-foreground text-lg max-w-2xl">
+              Una selección de proyectos que demuestran mis habilidades en desarrollo web, diseño y arquitectura de
+              software.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+            {projects.map((project, index) => (
+              <div key={project.id} className="animate-fade-in-up" style={{ animationDelay: `${index * 100}ms` }}>
+                <ProjectCard project={project} index={index} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
-  );
+  )
 }
