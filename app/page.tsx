@@ -48,7 +48,7 @@ export default function Home() {
       <Navigation />
 
       {/* Hero primero */}
-      <Hero />
+      {/* <Hero /> */}
 
       {/* About Section */}
      <section id="about" className="py-16 md:py-8 px-4 md:px-8 bg-card/50">
@@ -87,7 +87,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl blur-xl opacity-60"></div>
           <div className="relative w-full aspect-square">
             <Image
-              src="/wira-alonso.jpg"
+              src="/profile.jpeg"
               alt="Foto de perfil"
               fill
               className="rounded-2xl object-cover shadow-lg hover:shadow-xl transition-shadow"
