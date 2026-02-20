@@ -1,13 +1,11 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
-import { Poppins } from "next/font/google"
+import { Fraunces, Quattrocento_Sans } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
-const _poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600", "700"] })
+const _fraunces = Fraunces({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"] })
+const _quattrocento = Quattrocento_Sans({ subsets: ["latin"], weight: ["400", "700"] })
 
 export const metadata: Metadata = {
   title: "Alonso Morante",
@@ -30,12 +28,13 @@ export const metadata: Metadata = {
     ],
     apple: "/laptop.png",
   },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 5,
-    userScalable: true,
-  },
+}
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
 }
 
 export default function RootLayout({
@@ -45,7 +44,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${_poppins.className} antialiased`}>
+      <body className={`${_fraunces.className} antialiased`}>
         {children}
         <Analytics />
       </body>

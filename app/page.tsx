@@ -1,6 +1,4 @@
 import { Github as GitHub, Linkedin } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import Hero from "@/components/hero"
 import ProjectCard from "@/components/project-card"
 import CVModal from "@/components/cv-modal"
 import Navigation from "@/components/navigation"
@@ -44,82 +42,108 @@ const projects = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-organic text-foreground">
       <Navigation />
 
-      {/* Hero primero */}
-      {/* <Hero /> */}
-
       {/* About Section */}
-     <section id="about" className="py-16 md:py-8 px-4 md:px-8 bg-card/50">
-  <div className="max-w-7xl mx-auto">
-    <h2 className="text-4xl md:text-5xl font-bold mb-8 text-balance animate-fade-in-up">Sobre Mí</h2>
-    <div className="grid md:grid-cols-2 gap-8 items-center">
-      <div className="space-y-6 animate-slide-in-right">
-        <p className="text-muted-foreground text-lg leading-relaxed">
-          Soy desarrollador web apasionado por crear experiencias digitales excepcionales. Con más de 2 años de
-          experiencia, me especializo en construcción de aplicaciones web escalables utilizando tecnologías
-          modernas.
-        </p>
-        <p className="text-muted-foreground text-lg leading-relaxed">
-          Me encanta resolver problemas complejos y trabajar con equipos para llevar ideas del concepto al
-          lanzamiento. Cuando no estoy codificando, disfruto contribuyendo a proyectos de código abierto y
-          compartir conocimiento con la comunidad.
-        </p>
-        <div className="flex gap-3 pt-2">
-          <CVModal />
-          <a href="https://github.com/alonsomorante" target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" size="sm" className="gap-2 bg-transparent">
-              <GitHub className="w-5 h-5" />
-              GitHub
-            </Button>
-          </a>
-          <a href="https://www.linkedin.com/in/alonso-morante-a376a7195/" target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" size="sm" className="gap-2 bg-transparent">
-              <Linkedin className="w-5 h-5" />
-              LinkedIn
-            </Button>
-          </a>
-        </div>
-      </div>
-      <div className="flex justify-center animate-scale-in">
-        <div className="relative w-full max-w-md">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl blur-xl opacity-60"></div>
-          <div className="relative w-full aspect-square">
-            <Image
-              src="/profile.jpeg"
-              alt="Foto de perfil"
-              fill
-              className="rounded-2xl object-cover shadow-lg hover:shadow-xl transition-shadow"
-              sizes="(max-width: 768px) 100vw, 50vw"
-              priority
-            />
+      <section id="about" className="py-16 md:py-24 px-4 md:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Left - Text */}
+            <div className="space-y-6">
+              <div className="animate-fade-in-up">
+                <span className="text-primary font-semibold tracking-wide uppercase text-sm">
+                  Desarrollador Web
+                </span>
+                <h2 className="text-4xl md:text-6xl font-display font-bold mt-3 leading-tight">
+                  Hola, soy{" "}
+                  <span className="text-primary">Alonso</span>
+                </h2>
+                <div className="wave-divider mt-4" />
+              </div>
+              
+              <div className="space-y-4 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
+                <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                  Soy desarrollador web apasionado por crear experiencias digitales 
+                  <span className="text-primary font-semibold"> excepcionales</span>. Con más de 2 años de 
+                  experiencia, me especializo en construcción de aplicaciones web 
+                  escalables utilizando tecnologías modernas.
+                </p>
+                <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                  Me encanta resolver problemas complejos y trabajar con equipos para 
+                  llevar ideas del concepto al lanzamiento.
+                </p>
+              </div>
+              
+              <div className="flex flex-wrap gap-3 animate-fade-in-up" style={{ animationDelay: '400ms' }}>
+                <CVModal />
+                <a href="https://github.com/alonsomorante" target="_blank" rel="noopener noreferrer">
+                  <button className="btn-organic btn-organic-secondary gap-2 text-sm">
+                    <GitHub className="w-4 h-4" />
+                    GitHub
+                  </button>
+                </a>
+                <a href="https://www.linkedin.com/in/alonso-morante-a376a7195/" target="_blank" rel="noopener noreferrer">
+                  <button className="btn-organic btn-organic-outline gap-2 text-sm">
+                    <Linkedin className="w-4 h-4" />
+                    LinkedIn
+                  </button>
+                </a>
+              </div>
+            </div>
+            
+            {/* Right - Image */}
+            <div className="flex justify-center animate-fade-in-up" style={{ animationDelay: '300ms' }}>
+              <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-[2rem] overflow-hidden shadow-2xl">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 z-10 pointer-events-none" />
+                <Image
+                  src="/profile.jpeg"
+                  alt="Foto de perfil"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 256px, 320px"
+                  priority
+                />
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
-      <section id="projects" className="py-16 md:py-24 px-4 md:px-8">
+      {/* Projects Section */}
+      <section id="projects" className="py-16 md:py-24 px-4 md:px-8 bg-white/50">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-12 space-y-3 animate-fade-in-up">
-            <h2 className="text-4xl md:text-5xl font-bold text-balance">Mis Proyectos</h2>
-            <p className="text-muted-foreground text-lg max-w-2xl">
-              Una selección de proyectos que demuestran mis habilidades en desarrollo web, diseño y arquitectura de
-              software.
+          <div className="mb-12">
+            <span className="text-primary font-semibold tracking-wide uppercase text-sm">
+              Portfolio
+            </span>
+            <h2 className="text-4xl md:text-5xl font-display font-bold mt-3">
+              Mis Proyectos
+            </h2>
+            <div className="wave-divider mt-4" />
+            <p className="text-muted-foreground mt-4 max-w-2xl">
+              Una selección de proyectos que demuestran mis habilidades en desarrollo web, 
+              diseño y arquitectura de software.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {projects.map((project, index) => (
-              <div key={project.id} className="animate-fade-in-up" style={{ animationDelay: `${index * 100}ms` }}>
-                <ProjectCard project={project} index={index} />
-              </div>
+              <ProjectCard project={project} index={index} />
             ))}
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="py-8 px-4 md:px-8 border-t border-border">
+        <div className="max-w-7xl mx-auto text-center">
+          <p className="text-muted-foreground text-sm">
+            © {new Date().getFullYear()} Alonso Morante.{" "}
+            <span className="text-primary">Diseñado con cuidado</span>
+          </p>
+        </div>
+      </footer>
     </div>
   )
 }
